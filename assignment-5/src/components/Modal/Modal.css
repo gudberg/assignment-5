@@ -1,0 +1,30 @@
+.color {
+    display: inline-block;
+    margin: 10px;
+    background-size: cover;
+    background-position: 50%;
+    border-radius: 50%;
+    transition: transform 1s ease-in;
+}
+
+.color:hover {
+    transform: rotate(360deg);
+}
+
+.color-small {
+    composes: color;
+    width: 100px;
+    height: 100px;
+}
+
+.color-medium {
+    composes: color;
+    width: 200px;
+    height: 200px;
+}
+
+.color-large {  
+    composes: color;
+    width: 300px;
+    height: 300px;
+}

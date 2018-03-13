@@ -1,0 +1,32 @@
+.cardContainer {
+    box-shadow: 10px 10px;
+    color: rgb(219, 219, 219);
+    border: 1px solid black;
+    display: inline-block;
+    margin: 15px;
+    padding: 10px;
+}
+
+.avatar {
+    display: inline-block;
+    margin: 10px;
+    background-size: cover;    
+    background-position: 50%;
+    border-radius: 50%;
+    transition: transform 1s ease-in;
+
+}
+
+.name {
+    color: black;
+    border-bottom: 1px solid rgb(161, 152, 152);
+    padding: 3px;
+}
+
+.email {
+    composes: name;
+}
+
+.telephone {
+    composes: name;
+}
