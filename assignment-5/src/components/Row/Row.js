@@ -22,7 +22,6 @@ class Row extends React.Component {
                 rows.push(<div className={styles.row}>{row}</div>);
                 row = [];
                 counter = 0;
-                console.log("meir ");
             }
             counter += col.props.size;
             row.push(col);

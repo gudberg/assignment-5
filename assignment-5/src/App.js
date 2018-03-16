@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import './App.css';
+import styles from './App.css';
 import Modal from './components/Modal/Modal';
 import NameCard from './components/NameCard/NameCard';
 import Row from './components/Row/Row';
 import Col from './components/Col/Col';
+import ProgressBar from './components/ProgressBar/ProgressBar';
 
 class App extends Component {
   render() {
     return (
       
-      <div className="container ">
+      <div className={styles.container}>
         <Modal color="small" > Modal texti </Modal>
         <Modal color="medium" > Modal texti </Modal>
         <Modal color="large" > Modal texti </Modal>
@@ -33,6 +34,12 @@ class App extends Component {
             <Col size={6}>asdfas</Col>
             <Col size={6}>asdfadsf</Col>
         </Row>
+        <ProgressBar 
+            progress={75}
+            state={'warning'}
+            striped={true}
+            animated={true}
+            />
       </div>
       
     );
