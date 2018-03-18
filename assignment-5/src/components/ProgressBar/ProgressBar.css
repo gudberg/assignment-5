@@ -1,0 +1,44 @@
+.block {
+    margin: 10px;
+    width: 100%;
+    height: 20px;
+    background-color:#0000001f;
+}
+
+.prog-base {
+    height: 20px;
+    transition: transform 1s ease-in-out;
+}
+
+.prog-success {
+    composes: prog-base;
+    background-color:green;
+}
+
+.prog-info {
+    composes: prog-base;
+    background-color: aqua;
+}
+
+.prog-warning {
+    composes: prog-base;
+    background-color: orange;
+}
+
+.prog-danger {
+    composes: prog-base;
+    background-color: red;
+}
+
+.striped {
+    background-size: 30px 30px;
+    background-image: linear-gradient(135deg, rgba(255, 255, 255, .15) 25%, transparent 25%,
+                        transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%,
+                        transparent 75%, transparent);            
+    
+    animation: animate-stripes 3s linear infinite;  
+}
+
+.animate:hover {
+    transform: rotate(360deg);
+}

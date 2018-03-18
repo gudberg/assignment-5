@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
-import './App.css';
 import NameCard from './components/NameCard/NameCard';
 import Carousel from './components/Carousel/Carousel';
 import Modal from './components/Modal/Modal';
-
+import logo from './logo.svg';
+import styles from './App.css';
+import Row from './components/Row/Row';
+import Col from './components/Col/Col';
+import ProgressBar from './components/ProgressBar/ProgressBar';
 
 class App extends Component {
   constructor(props) {
@@ -43,6 +46,27 @@ class App extends Component {
           ]}
           size="medium" />
        </div>
+
+
+        <Row>
+            <Col size={12}>col</Col>
+            <Col size={3}>ad</Col>
+            <Col size={3}>asdfa</Col>
+            <Col size={3}>asdf</Col>
+            <Col size={4}>asdfasd</Col>
+            <Col size={2}>asdfasdf</Col>
+            <Col size={6}>asdfasdf</Col>
+            <Col size={6}>asdfas</Col>
+            <Col size={6}>asdfadsf</Col>
+        </Row>
+        <ProgressBar 
+            progress={75}
+            state={'warning'}
+            striped={true}
+            animated={true}
+            />
+      </div>
+
       
     );
   }
