@@ -31,9 +31,9 @@ class App extends Component {
         </Modal>
 
         <NameCard 
-          name="Nafn"
-          email="Email"
-          telephone="Simi"
+          name="Beggi"
+          email="gudberg@gmail.com"
+          telephone="unknown"
           imageUrl="https://www.wikihow.com/images/6/61/Draw-a-Cartoon-Man-Step-15.jpg"
         />
       
@@ -45,10 +45,7 @@ class App extends Component {
             'https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-9/20294477_10213868745609799_2697690918225896195_n.jpg?oh=5927473e14feb07ca8c6eae45b4d1693&oe=5B3A9E21'
           ]}
           size="medium" />
-       </div>
-
-
-        <Row>
+          <Row>
             <Col size={12}>col</Col>
             <Col size={3}>ad</Col>
             <Col size={3}>asdfa</Col>
@@ -65,7 +62,7 @@ class App extends Component {
             striped={true}
             animated={true}
             />
-      </div>
+       </div>
 
       
     );
