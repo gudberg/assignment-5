@@ -8,6 +8,7 @@ import Row from './components/Row/Row';
 import Col from './components/Col/Col';
 import ProgressBar from './components/ProgressBar/ProgressBar';
 import TimePicker from './components/TimePicker/TimePicker';
+import DatePicker from './components/DatePicker/DatePicker';
 
 class App extends Component {
   constructor(props) {
@@ -22,7 +23,7 @@ class App extends Component {
     return (
       <div className="container">
         
-        <button onClick={() => this.setState({ isModalOpen: true})}>Open Modal!</button>
+        {/* <button onClick={() => this.setState({ isModalOpen: true})}>Open Modal!</button>
         <Modal 
           isOpen={isModalOpen}
           onClose={() => this.setState({ isModalOpen:false })}>
@@ -65,7 +66,11 @@ class App extends Component {
         />
         <TimePicker
             onTimePick={time => console.log(time)}
-            format={24}
+            format={12}
+        /> */}
+
+        <DatePicker 
+            onDatePick={date => console.log(date)}
         />
       </div>
       

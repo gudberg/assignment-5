@@ -30,21 +30,6 @@ class TimePicker extends React.Component {
     onClick = (method, change = 0) => {
         const { minute, hour } = this.state;
         const { format } = this.props;
-        if(isNaN(minute) || minute > 59) {
-            this.setState({ ...initialState.minute });
-            return;
-        }
-
-
-        if(isNaN(hour) || (hour + parseInt(change)) > 24) {
-            this.setState({ ...initialState.hour });
-            return;
-        }
-
-        if( format === 12 && (hour + change)=== 0) {
-            this.setState({ hour: 12 });
-            return;
-        }
 
         switch(method) {
             case UP_H: {
@@ -85,14 +70,6 @@ class TimePicker extends React.Component {
                     break;
                 }
                 this.setState({ minute: minute - 1})
-                break;
-            }
-            case CHANGEH: {
-                this.setState({ hour: parseInt(change) });
-                break;
-            }
-            case CHANGEM: {
-                this.setState({ minute : parseInt(change) });
                 break;
             }
             default: break;
