@@ -48,7 +48,7 @@ class TimePicker extends React.Component {
 
         switch(method) {
             case UP_H: {
-                if(hour === 23 && format != 12 ) {
+                if(hour === 23 && format !== 12 ) {
                     this.setState({ hour: 0});
                     break;
                 }
@@ -125,7 +125,7 @@ class TimePicker extends React.Component {
         const { onTimePick } = this.props;
         let time = `${this.getHour()}:${this.getMinute()}`;
         if(format === 12) {
-            if(hour >= 12 &&  hour != 24) {
+            if(hour >= 12 &&  hour !== 24) {
                 time += ' pm';
             }
             else {
@@ -141,7 +141,7 @@ class TimePicker extends React.Component {
         const { format } = this.props;
         let amPm = (<div className={styles.ampm}></div>);
         if(format === 12) {
-            if(this.state.hour >= 12 && this.state.hour != 24) {
+            if(this.state.hour >= 12 && this.state.hour !== 24) {
                 amPm = (
                     <div className={styles.ampm}>
                         <FontAwesome 
