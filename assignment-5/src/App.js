@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
+// import logo from './logo.svg';
 import NameCard from './components/NameCard/NameCard';
 import Carousel from './components/Carousel/Carousel';
 import Modal from './components/Modal/Modal';
-import logo from './logo.svg';
 import styles from './App.css';
 import Row from './components/Row/Row';
 import Col from './components/Col/Col';
 import ProgressBar from './components/ProgressBar/ProgressBar';
+import TimePicker from './components/TimePicker/TimePicker';
 
 class App extends Component {
   constructor(props) {
@@ -61,9 +62,12 @@ class App extends Component {
             state={'warning'}
             striped={true}
             animated={true}
-            />
-       </div>
-
+        />
+        <TimePicker
+            onTimePick={time => console.log(time)}
+            format={24}
+        />
+      </div>
       
     );
   }

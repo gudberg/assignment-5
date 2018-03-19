@@ -1,13 +1,12 @@
 import React from 'react';
 import Col from '../Col/Col';
-import PropTypes from 'prop-types';
 import styles from './Row.css';
 
 class Row extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            cols: props.children
+            cols: Object.assign([], props.children)
         }
     }
 
@@ -17,9 +16,10 @@ class Row extends React.Component {
         const WHOLE_ROW = 12;
         let rows = [];
         let row = [];
+        console.log(cols);
         cols.forEach((col, i) => {
             if(counter + col.props.size > WHOLE_ROW) {
-                rows.push(<div className={styles.row}>{row}</div>);
+                rows.push(<div key={i} className={styles.row}>{row}</div>);
                 row = [];
                 counter = 0;
             }
