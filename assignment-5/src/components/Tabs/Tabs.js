@@ -3,12 +3,16 @@ import PropTypes from 'prop-types';
 import Tab from '../Tab/Tab';
 import styles from './Tabs.css';
 
-const Tabs = ({ children, currentSelectedTab, onSelect, theme }) => {
+const Tabs = ({ children, currentSelectedTab, onSelect, theme, layout }) => {
     let indexOfKey = children.map(child => child.props.selectionKey);
     const currentTabIndex = indexOfKey.indexOf(currentSelectedTab);
     const currentTab = children[currentTabIndex];
+    let verticalLayout = '';
+    if(layout === 'vertical') {
+        verticalLayout = styles['vertical-div'];
+    }
     const tabs = children.map((child, i) => {
-        let tabStyle = `${styles.tab}`;
+        let tabStyle = `${styles[`tab-${layout}`]}`;
         if(i === currentTabIndex) {
             tabStyle += ` ${styles[`selected-${theme}`]}`; 
         } else {
@@ -23,10 +27,10 @@ const Tabs = ({ children, currentSelectedTab, onSelect, theme }) => {
     });
     return (
         <div>   
-            <div className={`${styles[`${theme}`]}`}>
+            <div className={`${styles[`${theme}-${layout}`]}`}>
                 {tabs}
             </div>
-            <div>
+            <div className={verticalLayout}>
                 {currentTab}
             </div>
         </div>
@@ -42,7 +46,7 @@ Tabs.propTypes = {
         const prop = props[propName];
         let error = null;
         if(prop === undefined) {
-            error = new Error('Row should contain Col element');
+            error = new Error('Tabs should contain Tab element');
         }
         React.Children.forEach(prop, (child) => {
             if(child.type !== Tab) {

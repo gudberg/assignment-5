@@ -65,13 +65,13 @@ class App extends Component {
             state={'warning'}
             striped={true}
             animated={true}
-        />
+        />*/}
         <TimePicker
             onTimePick={time => console.log(time)}
-            format={24}
-        /> */}
+            format={12}
+        /> 
         <Tabs
-            theme='dark'
+            theme='light'
             layout='horizontal'
             onSelect={tab => this.setState({ currentTab: tab})}
             currentSelectedTab={currentTab}
