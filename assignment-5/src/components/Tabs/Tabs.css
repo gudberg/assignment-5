@@ -1,0 +1,49 @@
+.tabs {
+    display: block;
+    width: 100%;
+    height: 30px;
+    border-bottom: 1px solid #8080801a;
+    overflow: scroll;
+}
+
+.dark {
+    composes: tabs;
+    background-color: #333;
+}
+
+.light {
+    composes: tabs;
+    background-color: #8080801a;
+}
+
+.tab {
+    padding-top: 7px;
+    width: 10%;
+    height: 80%;
+    display: inline-block;
+    text-align: center;
+    overflow: hidden;
+}
+
+.tab:hover {
+    cursor: pointer;
+}
+
+.selected-light {
+    background-color: #58e0e8;
+    color: white;
+}
+
+.not-light {
+    background-color: #8080801a;
+}
+
+.selected-dark {
+    background-color:orange;
+    color: white;
+}
+
+.not-dark {
+    background-color: #333;
+    color: white;
+}
