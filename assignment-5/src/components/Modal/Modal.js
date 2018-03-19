@@ -1,21 +1,33 @@
 import React from 'react';
-import Proptypes from 'prop-types';
 import styles from './Modal.css';
+import PropTypes from 'prop-types';
 
-const Modal = ({color, children}) => {
+const Modal = ({ isOpen, onClose, children }) => {
+
     return(
-        <div className={styles[`color-${color}`]}>
-        {children}
+        <div className={`${styles.modalOverlay} ${isOpen ? '' : styles.hidden}`}>
+            <div className={styles.modal}>
+                <div className={styles.modalClose} onClick={ onClose }><i className="fa fa-times"></i></div>
+                    {children}
+            </div>
         </div>
     );
-};
+};  
+
+
+Modal.Title = ({ children }) => <div className={styles.modalTitle}>{children}</div>;
+Modal.Body = ({ children }) => <div className={styles.modalBody}>{children}</div>;
+Modal.Footer = ({ children }) => <div className={styles.modalFooter}>{children}</div>;
+
 
 Modal.propTypes = {
-    color: Proptypes.oneOf([ 'small', 'medium', 'large' ]),
-    children: Proptypes.node
-};
+    isOpen: PropTypes.bool.isRequired,
+    onClose: PropTypes.func.isRequired,
+    children: PropTypes.node
+};  
 
 Modal.defaultProps = {
-    color: 'medium'
-};
+    isOpen: false
+}
+
 export default Modal;

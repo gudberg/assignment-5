@@ -49,7 +49,7 @@ class TimePicker extends React.Component {
 
         switch(method) {
             case UP_H: {
-                if(hour === 23 && format != 12) {
+                if(hour === 23 && format != 12 ) {
                     this.setState({ hour: 0});
                     break;
                 }
