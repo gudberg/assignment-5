@@ -24,7 +24,6 @@ class TimePicker extends React.Component {
         this.state = {
             hour: 12,
             minute: 0,
-            pm: false
         }
     }
 
@@ -53,6 +52,10 @@ class TimePicker extends React.Component {
                     this.setState({ hour: 0});
                     break;
                 }
+                else if (hour === 24 && format === 12) {
+                    this.setState({ hour: 1 });
+                    break;
+                }
                 this.setState({ hour: hour + 1});
                 break;
             }
@@ -65,8 +68,12 @@ class TimePicker extends React.Component {
                 break;
             }
             case DOWN_H: {
-                if(hour === 0 || format === 12 && hour === 1) {
-                    this.setState({ hour: 24});
+                if(hour === 0) {
+                    this.setState({ hour: 23});
+                    break;
+                }
+                else if (format === 12 && hour === 1) {
+                    this.setState( { hour: 24 });
                     break;
                 }
                 this.setState({ hour: hour - 1});
@@ -113,8 +120,19 @@ class TimePicker extends React.Component {
     }
 
     handleSet() {
+        const { format } = this.props;
+        const { hour } = this.state;
         const { onTimePick } = this.props;
-        onTimePick(`${this.getHour()}:${this.getMinute()}`);
+        let time = `${this.getHour()}:${this.getMinute()}`;
+        if(format === 12) {
+            if(hour >= 12 &&  hour != 24) {
+                time += ' pm';
+            }
+            else {
+                time += ' am';
+            }
+        }
+        onTimePick(time);
     }
 
     render() {
@@ -123,7 +141,7 @@ class TimePicker extends React.Component {
         const { format } = this.props;
         let amPm = (<div className={styles.ampm}></div>);
         if(format === 12) {
-            if(this.state.hour < 13 && this.state.hour != 0) {
+            if(this.state.hour >= 12 && this.state.hour != 24) {
                 amPm = (
                     <div className={styles.ampm}>
                         <FontAwesome 

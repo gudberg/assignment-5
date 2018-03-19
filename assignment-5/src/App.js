@@ -65,7 +65,7 @@ class App extends Component {
         />
         <TimePicker
             onTimePick={time => console.log(time)}
-            format={12}
+            format={24}
         />
       </div>
       
