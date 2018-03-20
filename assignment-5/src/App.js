@@ -66,7 +66,7 @@ class App extends Component {
             state={'warning'}
             striped={true}
             animated={true}
-        />*/}
+        />
         <TimePicker
             onTimePick={time => console.log(time)}
             format={12}
@@ -75,7 +75,7 @@ class App extends Component {
         <DatePicker 
             onDatePick={date => console.log(date)}
         />
-        /> 
+        
         {/* <Tabs
             theme='light'
             layout='horizontal'
