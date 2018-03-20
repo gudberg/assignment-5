@@ -10,8 +10,6 @@ class Carousel extends React.Component  {
         this.state = {
             currSlide : 0
         }
-        this.forward= this.forward.bind(this);
-        this.backwards= this.forward.bind(this);
     } 
 
     //Movements to both sides 
@@ -24,7 +22,7 @@ class Carousel extends React.Component  {
         }
         else {
             this.setState({
-                currSlide: getCurrSlide -1 //In order to go to the last slide after having gone all the way down
+                currSlide: this.props.images.length -1 //In order to go to the last slide after having gone all the way down
             })
         } 
     }
@@ -56,11 +54,11 @@ class Carousel extends React.Component  {
 
         return(
             <div className={styles.slideShow}>
-                <a className={styles.next} onClick={this.backwards}>previous image</a>
                 <div className={styles.slider}>
                      {fetchImages}
                  </div>
-                <a className={styles.next} onClick={this.forward}>next image</a>
+                 <div className={styles.backwards} onClick={() => this.backwards()}><i className ="fa fa-arrow-circle-left makeBig"></i></div>
+                <div className={styles.next} className ="fa fa-arrow-circle-right makeBig" onClick={() => this.forward()}></div>
             </div>
         );
     }

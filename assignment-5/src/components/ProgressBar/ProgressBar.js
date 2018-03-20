@@ -8,7 +8,6 @@ const ProgressBar = ({ progress, striped, animated, state}) => {
         barStyle += ` ${styles.striped}`
     }
     if(animated) {
-        console.log("animatEe!!");
         barStyle += ` ${styles.animate}`
     }
     console.log(barStyle);
