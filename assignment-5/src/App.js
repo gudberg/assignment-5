@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 // import logo from './logo.svg';
-import NameCard from './components/NameCard/NameCard';
-import Carousel from './components/Carousel/Carousel';
-import Modal from './components/Modal/Modal';
-import styles from './App.css';
-import Row from './components/Row/Row';
-import Col from './components/Col/Col';
-import ProgressBar from './components/ProgressBar/ProgressBar';
-import TimePicker from './components/TimePicker/TimePicker';
+// import NameCard from './components/NameCard/NameCard';
+// import Carousel from './components/Carousel/Carousel';
+// import Modal from './components/Modal/Modal';
+// import styles from './App.css';
+// import Row from './components/Row/Row';
+// import Col from './components/Col/Col';
+// import ProgressBar from './components/ProgressBar/ProgressBar';
+// import TimePicker from './components/TimePicker/TimePicker';
 import Tabs from './components/Tabs/Tabs';
 import Tab from './components/Tab/Tab';
+import AlarmClock from './components/AlarmClock/AlarmClock';
 
 class App extends Component {
   constructor(props) {
@@ -66,7 +67,7 @@ class App extends Component {
             striped={true}
             animated={true}
         />*/}
-        <TimePicker
+        <AlarmClock
             onTimePick={time => console.log(time)}
             format={12}
         /> 
