@@ -38,7 +38,7 @@ class CartoonNetworkSpinner extends React.Component {
     render() {
         return(
             <div className={styles.onImages}>
-            <img className={styles.changingImages} src={this.state.images[this.state.timer]} />
+            <img className={styles.changingImages} alt="Something went wrong!" src={this.state.images[this.state.timer]} />
           </div>
     
         );

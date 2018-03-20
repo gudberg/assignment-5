@@ -37,7 +37,3 @@
                         transparent 75%, transparent);            
     animation: animate-stripes 3s linear infinite;  
 }
-
-.animate:hover {
-    transform: rotate(360deg);
-}

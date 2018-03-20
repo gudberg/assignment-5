@@ -2,23 +2,51 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './ProgressBar.css';
 
-const ProgressBar = ({ progress, striped, animated, state}) => {
-    let barStyle = `${styles[`prog-${state}`]}`;
-    if(striped) {
-        barStyle += ` ${styles.striped}`
+class ProgressBar extends React.Component {
+    componentDidMount() {
+        this.interval = setInterval(this.keepTheLoopGoing.bind(this), 10);
     }
-    if(animated) {
-        barStyle += ` ${styles.animate}`
+
+    keepTheLoopGoing() {
+        const { progress } = this.props;
+        const { currentProgress } = this.state;
+        if(progress > currentProgress) {
+            this.setState({ currentProgress: currentProgress + 1});
+        } else {
+            clearInterval(this.interval);
+        }
     }
-    console.log(barStyle);
-    const style = {
-        width: `${progress}%`
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            currentProgress: 0,
+        }
     }
-    return (
-        <div className={styles.block}>
-            <div style={style} className={barStyle}></div>
-        </div>
-    );
+
+    render() {
+        const { currentProgress } = this.state;
+        const { progress, striped, animated, state } = this.props; 
+        let barStyle = `${styles[`prog-${state}`]}`;
+        if(striped) {
+            barStyle += ` ${styles.striped}`
+        }
+        let style = {};
+        if(animated) {
+            style = {
+                width: `${currentProgress}%`
+            }
+        } else {
+            style = {
+                width: `${progress}%`
+            }
+        }
+        return (
+            <div className={styles.block}>
+                <div style={style} className={barStyle}></div>
+            </div>
+        );
+    }
 }
 
 ProgressBar.propTypes = {

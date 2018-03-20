@@ -11,15 +11,15 @@ class Calendar extends React.Component {
         const init = new Date();
         this.state = {
             year: init.getFullYear(),
-            month: init.getMonth(),
-            day: init.getDay(),
+            month: init.getMonth() + 1,
+            day: init.getDate(),
             error: ''
         }
     }
 
     populateDays(year, month, currentDay) {
-        const thirtyFirst = [0, 2, 4, 6, 7, 9, 11];
-        const thirty = [3, 5, 8, 10];
+        const thirtyFirst = [1, 3, 5, 7, 8, 10, 12];
+        const thirty = [4, 6, 9, 11];
         let days = 0;
         if(thirtyFirst.includes(month)) {
             days = 31;
@@ -37,30 +37,31 @@ class Calendar extends React.Component {
         let daysArray = [...Array(days).keys()];
         let daysPopulated =  daysArray.map(day => {
             let dayStyle =`${styles.day}`;
-            if(day === currentDay) {
+            if(day === currentDay - 1) {
                 dayStyle += ` ${styles.selected}`
             }
+            let rightDay = day + 1;
             return (
                 <div 
-                    onClick={() => this.setState({day})}
+                    onClick={() => this.setState({day: rightDay})}
                     className={dayStyle}
                     key={day}
-                >{day + 1}</div>);
+                >{rightDay}</div>);
         });
         return daysPopulated;
     }
 
     handleMonth(change) {
         const { month, year } = this.state;
-        if(change < 0 && month === 0) {
+        if(change < 0 && month === 1) {
             this.setState({ 
                 year: year - 1,
-                month: months.length - 1
+                month: months.length
             });            
-        } else if(change > 0 && month === months.length - 1) {
+        } else if(change > 0 && month === months.length ) {
             this.setState({
                 year: year + 1,
-                month: 0
+                month: 1
             })
         } else {
             this.setState({ month: month + change });
@@ -70,7 +71,7 @@ class Calendar extends React.Component {
     setDate() {
         const { year, month, day } = this.state;
         const { locale, onDatePick, closeModal } = this.props;
-        let currentDate = new Date(year, month + 1, day + 1);
+        let currentDate = new Date(year, month - 1, day);
         if ( isNaN( currentDate.getTime() ) ) {  
             this.setState({ error: 'Date is invalid '});
             return;
@@ -93,9 +94,9 @@ class Calendar extends React.Component {
                         name='angle-left' 
                         onClick={() => this.handleMonth(-1)}
                     />
-                    <p>{months[month]} {year}</p>
+                    <p>{months[month - 1]} {year}</p>
                     <FontAwesome 
-                        className={styles.arrows}s
+                        className={styles.arrows}
                         aria-hidden='false' 
                         name='angle-right' 
                         onClick={() => this.handleMonth(1)}

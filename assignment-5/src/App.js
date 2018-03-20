@@ -82,7 +82,7 @@ class App extends Component {
 
         <DatePicker 
             onDatePick={date => console.log(this.state)}
-            locale='en-EN'
+            // locale='en-EN'
         />
         
         {/* <Tabs
