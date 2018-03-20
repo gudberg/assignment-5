@@ -12,6 +12,7 @@ import TimePicker from './components/TimePicker/TimePicker';
 import DatePicker from './components/DatePicker/DatePicker';
 import Tabs from './components/Tabs/Tabs';
 import Tab from './components/Tab/Tab';
+import AlarmClock from './components/AlarmClock/AlarmClock';
 
 class App extends Component {
   constructor(props) {
