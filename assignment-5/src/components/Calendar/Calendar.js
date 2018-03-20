@@ -72,7 +72,7 @@ class Calendar extends React.Component {
         const { year, month, day } = this.state;
         const { locale, onDatePick, closeModal } = this.props;
         let currentDate = new Date(year, month - 1, day);
-        if ( isNaN( currentDate.getTime() ) ) {  
+        if ( isNaN( currentDate.getTime() ) || currentDate.getDate() !== day ) {  
             this.setState({ error: 'Date is invalid '});
             return;
           }

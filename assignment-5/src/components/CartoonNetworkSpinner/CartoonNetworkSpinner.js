@@ -18,10 +18,10 @@ class CartoonNetworkSpinner extends React.Component {
     }
 
     keepTheLoopGoing() {
-        let getTimer = this.state.timer;        
-        if(getTimer < this.state.images.length - 1) {
+        const { timer, images } = this.state;    
+        if(timer < images.length - 1) {
             this.setState({
-                timer: getTimer + 1
+                timer: timer + 1
             })            
         }
         else {
@@ -36,9 +36,10 @@ class CartoonNetworkSpinner extends React.Component {
      }
      
     render() {
+        const { images, timer } = this.state
         return(
             <div className={styles.onImages}>
-            <img className={styles.changingImages} alt="Something went wrong!" src={this.state.images[this.state.timer]} />
+            <img className={styles.changingImages} alt="Something went wrong!" src={images[timer]} />
           </div>
     
         );

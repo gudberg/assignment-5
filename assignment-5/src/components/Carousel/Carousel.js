@@ -15,24 +15,26 @@ class Carousel extends React.Component {
 
     //Movements to both sides 
     backwards() {
-        let getCurrSlide = this.state.currSlide;
-        if (getCurrSlide > 0) {
+        const { currSlide } = this.state;
+        const { images } = this.props;
+        if (currSlide > 0) {
             this.setState({
-                currSlide: getCurrSlide - 1
+                currSlide: currSlide - 1
             })
         }
         else {
             this.setState({
-                currSlide: this.props.images.length - 1 //In order to go to the last slide after having gone all the way down
+                currSlide: images.length - 1 //In order to go to the last slide after having gone all the way down
             })
         }
     }
 
     forward() {
-        let getCurrSlide = this.state.currSlide;
-        if (getCurrSlide < this.props.images.length - 1) {
+        const { currSlide } = this.state;
+        const { images } = this.props;
+        if ( currSlide < images.length - 1) {
             this.setState({
-                currSlide: getCurrSlide + 1
+                currSlide: currSlide + 1
             })
         }
         else {
@@ -45,11 +47,11 @@ class Carousel extends React.Component {
 
     render() {
         let imgArray = this.props.images;
-        let currSlide = this.state.currSlide;
-        var getThis = this;
+        const { currSlide }= this.state
+        const { size } = this.props;
         let fetchImages = imgArray.map((item, slideNumber) => {
             return (
-                <CarouselSlideItem getSize={getThis.props.size} image={item} show={getThis.state.currSlide === slideNumber} />
+                <CarouselSlideItem getSize={size} image={item} show={currSlide === slideNumber} />
             );
         });
 

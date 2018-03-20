@@ -6,10 +6,10 @@ const NameCard = ({ name, email, telephone, imageUrl, children}) => {
 
     return(
         <div className={`${style.cardContainer}`}>
-        <div style={{ backgroundImage: `url(${imageUrl})` }} className={style.avatar}></div>;
-        <div className={`${style.name} `}>Name: {name}</div>
-        <div className={`${style.email} `}>Email: {email}</div>
-        <div className={`${style.telephone}`}>Telephone: {telephone}</div>
+            <div style={{ backgroundImage: `url(${imageUrl})` }} className={style.avatar}></div>;
+            <div className={`${style.name} `}>Name: {name}</div>
+            <div className={`${style.email} `}>Email: {email}</div>
+            <div className={`${style.telephone}`}>Telephone: {telephone}</div>
         </div>
     );
 };
