@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './TimePicker.css';
 import FontAwesome from 'react-fontawesome';
-import Row from '../Row/Row';
-import Col from '../Col/Col';
 
 const UP_M = "UpM";
 const DOWN_M = "DownM";
