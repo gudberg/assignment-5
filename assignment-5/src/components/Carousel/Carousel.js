@@ -51,7 +51,7 @@ class Carousel extends React.Component {
         const { size } = this.props;
         let fetchImages = imgArray.map((item, slideNumber) => {
             return (
-                <CarouselSlideItem getSize={size} image={item} show={currSlide === slideNumber} />
+                <CarouselSlideItem getSize={size} key={slideNumber} image={item} show={currSlide === slideNumber} />
             );
         });
 
