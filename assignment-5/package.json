@@ -1,7 +1,7 @@
 {
-  "name": "assignment-5",
-  "version": "0.1.0",
-  "private": true,
+  "name": "alex-gudberg-assignment-five",
+  "version": "0.1.4",
+  "main": "dist/index.js",
   "dependencies": {
     "autoprefixer": "7.1.6",
     "babel-core": "6.26.0",
@@ -48,7 +48,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom"
+    "test": "node scripts/test.js --env=jsdom",
+    "package": "webpack --config ./config/webpack.config.build.js"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -83,16 +84,5 @@
       "jsx",
       "node"
     ]
-  },
-  "babel": {
-    "presets": [
-      "react-app"
-    ]
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "devDependencies": {
-    "prop-types": "^15.6.1"
   }
 }

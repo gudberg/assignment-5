@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import FontAwesome from 'react-fontawesome';
 import styles from './AlarmClock.css';
 
-const UP_M = "UpM";
-const DOWN_M = "DownM";
-const DOWN_H = "DownH";
-const UP_H = "UpH";
+const UP_M = 'UpM';
+const DOWN_M = 'DownM';
+const DOWN_H = 'DownH';
+const UP_H = 'UpH';
 
 class AlarmClock extends React.Component {
     constructor(props) {
@@ -17,7 +17,7 @@ class AlarmClock extends React.Component {
         }
     }
 
-    onClick = (method, change = 0) => {
+    onClick(method) {
         const { minute, hour } = this.state;
         const { format } = this.props;
         
@@ -26,8 +26,7 @@ class AlarmClock extends React.Component {
                 if(hour === 23 && format !== 12 ) {
                     this.setState({ hour: 0});
                     break;
-                }
-                else if (hour === 24 && format === 12) {
+                } else if (hour === 24 && format === 12) {
                     this.setState({ hour: 1 });
                     break;
                 }
@@ -46,8 +45,7 @@ class AlarmClock extends React.Component {
                 if(hour === 0) {
                     this.setState({ hour: 23});
                     break;
-                }
-                else if (format === 12 && hour === 1) {
+                } else if (format === 12 && hour === 1) {
                     this.setState( { hour: 24 });
                     break;
                 }
@@ -93,8 +91,7 @@ class AlarmClock extends React.Component {
         if(format === 12) {
             if(hour >= 12 &&  hour !== 24) {
                 time += ' pm';
-            }
-            else {
+            } else {
                 time += ' am';
             }
         }

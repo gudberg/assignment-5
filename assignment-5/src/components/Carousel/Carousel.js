@@ -21,8 +21,7 @@ class Carousel extends React.Component {
             this.setState({
                 currSlide: currSlide - 1
             })
-        }
-        else {
+        } else {
             this.setState({
                 currSlide: images.length - 1 //In order to go to the last slide after having gone all the way down
             })
@@ -36,8 +35,7 @@ class Carousel extends React.Component {
             this.setState({
                 currSlide: currSlide + 1
             })
-        }
-        else {
+        } else {
             this.setState({
                 currSlide: 0 //In order to go backwards if it has reached the end
             })

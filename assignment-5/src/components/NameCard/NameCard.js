@@ -2,7 +2,7 @@ import React from 'react';
 import Proptypes from 'prop-types';
 import style from './NameCard.css';
 
-const NameCard = ({ name, email, telephone, imageUrl, children}) => {
+const NameCard = ({ name, email, telephone, imageUrl}) => {
 
     return(
         <div className={`${style.cardContainer}`}>

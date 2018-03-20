@@ -21,7 +21,7 @@ const Tabs = ({ children, currentSelectedTab, onSelect, theme, layout }) => {
         return (
             <div key={i} onClick={() => onSelect(child.props.selectionKey)}
                 className={tabStyle}>
-                    {child.props.title}
+                {child.props.title}
             </div>
         );
     });

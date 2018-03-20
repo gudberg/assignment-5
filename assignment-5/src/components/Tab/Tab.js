@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Tab.css';
 
-const Tab = ({children, title}) => {
+const Tab = ({children}) => {
     return (
         <div className={styles.content}>
             {children}
         </div>
-        );
+    );
 }
 
 Tab.propTypes = {
