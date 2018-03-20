@@ -9,8 +9,6 @@ const UP_M = "UpM";
 const DOWN_M = "DownM";
 const DOWN_H = "DownH";
 const UP_H = "UpH";
-const CHANGEH = "CHANGEH";
-const CHANGEM = "CHANGEM";
 
 const initialState = {
     hour : 12,
@@ -21,10 +19,7 @@ const initialState = {
 class TimePicker extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            hour: 12,
-            minute: 0,
-        }
+        this.state = initialState;
     }
 
     onClick = (method, change = 0) => {
