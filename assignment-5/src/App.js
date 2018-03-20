@@ -9,6 +9,7 @@ import Col from './components/Col/Col';
 import ProgressBar from './components/ProgressBar/ProgressBar';
 import CartoonNetworkSpinner from './components/CartoonNetworkSpinner/CartoonNetworkSpinner';
 import TimePicker from './components/TimePicker/TimePicker';
+import DatePicker from './components/DatePicker/DatePicker';
 import Tabs from './components/Tabs/Tabs';
 import Tab from './components/Tab/Tab';
 
@@ -17,7 +18,8 @@ class App extends Component {
     super(props);
     this.state = {
       isModalOpen: false,
-      currentTab: 1
+      currentTab: 1,
+      date: ''
     };
   }
     
@@ -52,8 +54,7 @@ class App extends Component {
             'https://scontent-lht6-1.xx.fbcdn.net/v/t31.0-8/17855110_10212686792633955_9078787707100677461_o.jpg?oh=d1fb663a2479044bf07bdb7b2acfc614&oe=5B433475',
             'https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-9/20294477_10213868745609799_2697690918225896195_n.jpg?oh=5927473e14feb07ca8c6eae45b4d1693&oe=5B3A9E21'
           ]}
-          size="large" /> 
-
+          size="large" />
           <Row>
             <Col size={12}>just</Col>
             <Col size={3}>a</Col>
@@ -77,7 +78,13 @@ class App extends Component {
             onTimePick={time => console.log(time)}
             format={12}
         /> 
-        <Tabs
+
+        <DatePicker 
+            onDatePick={date => console.log(this.state)}
+            locale='en-EN'
+        />
+        
+        {/* <Tabs
             theme='light'
             layout='horizontal'
             onSelect={tab => this.setState({ currentTab: tab})}
@@ -119,7 +126,7 @@ class App extends Component {
             <Tab selectionKey={12} title="Tab 12">
                 I'm the body of tab 12
             </Tab>
-        </Tabs>
+        </Tabs> */}
         
       </div>
       
