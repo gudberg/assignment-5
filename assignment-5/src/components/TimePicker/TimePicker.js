@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './TimePicker.css';
-import FontAwesome from 'react-fontawesome';
+import AlarmClock from '../AlarmClock/AlarmClock';
 
 const initialState = {
     hour : 12,
@@ -10,7 +10,10 @@ const initialState = {
 
 
 class TimePicker extends React.Component {
-   
+   render() {
+       const { onTimePick, format} = this.props;
+       return <AlarmClock onTimePick={onTimePick} format={format}/>
+   }
 }
 
 TimePicker.propTypes = {

@@ -11,6 +11,7 @@ import React, { Component } from 'react';
 import Tabs from './components/Tabs/Tabs';
 import Tab from './components/Tab/Tab';
 import AlarmClock from './components/AlarmClock/AlarmClock';
+import TimePicker from './components/TimePicker/TimePicker';
 
 class App extends Component {
   constructor(props) {
@@ -67,7 +68,7 @@ class App extends Component {
             striped={true}
             animated={true}
         />*/}
-        <AlarmClock
+        <TimePicker
             onTimePick={time => console.log(time)}
             format={12}
         /> 
