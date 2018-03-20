@@ -4,15 +4,15 @@ import PropTypes from 'prop-types';
 
 const Modal = ({ isOpen, onClose, children }) => {
 
-    return(
+    return (
         <div className={`${styles.modalOverlay} ${isOpen ? '' : styles.hidden}`}>
             <div className={styles.modal}>
-                <div className={styles.modalClose} onClick={ onClose }><i className="fa fa-times"></i></div>
-                    {children}
+                <div className={styles.modalClose} onClick={onClose}><i className="fa fa-times"></i></div>
+                {children}
             </div>
         </div>
     );
-};  
+};
 
 
 Modal.Title = ({ children }) => <div className={styles.modalTitle}>{children}</div>;
@@ -24,7 +24,7 @@ Modal.propTypes = {
     isOpen: PropTypes.bool.isRequired,
     onClose: PropTypes.func.isRequired,
     children: PropTypes.node
-};  
+};
 
 Modal.defaultProps = {
     isOpen: false

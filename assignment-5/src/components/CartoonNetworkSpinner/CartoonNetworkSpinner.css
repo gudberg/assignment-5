@@ -1,5 +1,6 @@
 
 .changingImages {
+    
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -8,11 +9,13 @@
     width:  500px;
     height: 500px;
     background-position: 50% 50%;
+    /* Animation that enables the spinning, 2s is the speed of the spinning */
     animation:spin 2s linear infinite;    
     -webkit-animation:spin 2s linear infinite;
     -moz-animation:spin 2s linear infinite;
 }
 
+/* This is for spinning effect */
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }   
 @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
 @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
