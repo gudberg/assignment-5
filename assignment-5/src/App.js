@@ -9,17 +9,20 @@ import Col from './components/Col/Col';
 import ProgressBar from './components/ProgressBar/ProgressBar';
 import TimePicker from './components/TimePicker/TimePicker';
 import DatePicker from './components/DatePicker/DatePicker';
+import Tabs from './components/Tabs/Tabs';
+import Tab from './components/Tab/Tab';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isModalOpen: false
+      isModalOpen: false,
+      currentTab: 1
     };
   }
     
   render() {
-    const { isModalOpen } = this.state;
+    const { isModalOpen, currentTab } = this.state;
     return (
       <div className="container">
         
@@ -63,7 +66,7 @@ class App extends Component {
             state={'warning'}
             striped={true}
             animated={true}
-        />
+        />*/}
         <TimePicker
             onTimePick={time => console.log(time)}
             format={12}
@@ -72,6 +75,51 @@ class App extends Component {
         <DatePicker 
             onDatePick={date => console.log(date)}
         />
+        /> 
+        {/* <Tabs
+            theme='light'
+            layout='horizontal'
+            onSelect={tab => this.setState({ currentTab: tab})}
+            currentSelectedTab={currentTab}
+            >
+            <Tab selectionKey={1} title="Tab 1">
+                I'm the body of tab 1
+            </Tab>
+            <Tab selectionKey={2} title="Tab 2">
+                I'm the body of tab 2
+            </Tab>
+            <Tab selectionKey={3} title="Tab 3">
+                I'm the body of tab 3
+            </Tab>
+            <Tab selectionKey={4} title="Tab 4">
+                I'm the body of tab 4
+            </Tab>
+            <Tab selectionKey={5} title="Tab 5">
+                I'm the body of tab 5
+            </Tab>
+            <Tab selectionKey={6} title="Tab 6">
+                I'm the body of tab 6
+            </Tab>
+            <Tab selectionKey={7} title="Tab 7">
+                I'm the body of tab 7
+            </Tab>
+            <Tab selectionKey={8} title="Tab 8">
+                I'm the body of tab 8
+            </Tab>
+            <Tab selectionKey={9} title="Tab 9">
+                I'm the body of tab 9
+            </Tab>
+            <Tab selectionKey={10} title="Tab 10">
+                I'm the body of tab 10
+            </Tab>
+            <Tab selectionKey={11} title="Tab 11">
+                I'm the body of tab 11
+            </Tab>
+            <Tab selectionKey={12} title="Tab 12">
+                I'm the body of tab 12
+            </Tab>
+        </Tabs> */}
+        
       </div>
       
     );
