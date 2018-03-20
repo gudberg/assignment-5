@@ -26,7 +26,7 @@ class Row extends React.Component {
             counter += col.props.size;
             row.push(col);
         })
-        rows.push(<div className={styles.row}>{row}</div>);
+        rows.push(<div key={'lastRow'} className={styles.row}>{row}</div>);
         return (
             <div className={styles.row}>
                 {rows.map((row) => row)}
