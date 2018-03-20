@@ -1,16 +1,28 @@
 import React, { Component } from 'react';
-import NameCard from './components/NameCard/NameCard';
-import Carousel from './components/Carousel/Carousel';
-import Modal from './components/Modal/Modal';
+// import NameCard from './components/NameCard/NameCard';
+// import Carousel from './components/Carousel/Carousel';
+// import Modal from './components/Modal/Modal';
 import styles from './App.css';
-import Row from './components/Row/Row';
-import Col from './components/Col/Col';
-import ProgressBar from './components/ProgressBar/ProgressBar';
-import CartoonNetworkSpinner from './components/CartoonNetworkSpinner/CartoonNetworkSpinner';
-import TimePicker from './components/TimePicker/TimePicker';
-import DatePicker from './components/DatePicker/DatePicker';
-import Tabs from './components/Tabs/Tabs';
-import Tab from './components/Tab/Tab';
+// import Row from './components/Row/Row';
+// import Col from './components/Col/Col';
+// import ProgressBar from './components/ProgressBar/ProgressBar';
+// import CartoonNetworkSpinner from './components/CartoonNetworkSpinner/CartoonNetworkSpinner';
+// import TimePicker from './components/TimePicker/TimePicker';
+// import DatePicker from './components/DatePicker/DatePicker';
+// import Tabs from './components/Tabs/Tabs';
+// import Tab from './components/Tab/Tab';
+import { 
+    NameCard,
+    Carousel,
+    Modal, 
+    Row, 
+    Col, 
+    ProgressBar, 
+    CartoonNetworkSpinner,
+    TimePicker,
+    DatePicker,
+    Tabs,
+    Tab } from './components';
 
 class App extends Component {
   constructor(props) {
