@@ -1,5 +1,6 @@
 .base {
     display: inline-block;
+    height: 40px;
 }
 
 .col-1 {

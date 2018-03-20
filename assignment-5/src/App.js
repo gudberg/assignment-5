@@ -1,28 +1,35 @@
 import React, { Component } from 'react';
+// import logo from './logo.svg';
 import NameCard from './components/NameCard/NameCard';
 import Carousel from './components/Carousel/Carousel';
 import Modal from './components/Modal/Modal';
-import logo from './logo.svg';
 import styles from './App.css';
 import Row from './components/Row/Row';
 import Col from './components/Col/Col';
 import ProgressBar from './components/ProgressBar/ProgressBar';
 import CartoonNetworkSpinner from './components/CartoonNetworkSpinner/CartoonNetworkSpinner';
+import TimePicker from './components/TimePicker/TimePicker';
+import Tabs from './components/Tabs/Tabs';
+import Tab from './components/Tab/Tab';
+
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isModalOpen: false
+      isModalOpen: false,
+      currentTab: 1
     };
   }
     
   render() {
-    const { isModalOpen } = this.state;
+    const { isModalOpen, currentTab } = this.state;
     return (
       <div className="container">
         <div className={styles.center}>
           <button className={styles.button} onClick={() => this.setState({ isModalOpen: true})}>Open Modal!</button>
         </div>
+        
+        {/* <button onClick={() => this.setState({ isModalOpen: true})}>Open Modal!</button>
         <Modal 
           isOpen={isModalOpen}
           onClose={() => this.setState({ isModalOpen:false })}>
@@ -45,7 +52,7 @@ class App extends Component {
             'https://scontent-lht6-1.xx.fbcdn.net/v/t31.0-8/17855110_10212686792633955_9078787707100677461_o.jpg?oh=d1fb663a2479044bf07bdb7b2acfc614&oe=5B433475',
             'https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-9/20294477_10213868745609799_2697690918225896195_n.jpg?oh=5927473e14feb07ca8c6eae45b4d1693&oe=5B3A9E21'
           ]}
-          size="large" />
+          size="large" /> */}
           <Row>
             <Col size={12}>col</Col>
             <Col size={3}>ad</Col>
@@ -67,6 +74,56 @@ class App extends Component {
        </div>
 
 
+        />
+        <TimePicker
+            onTimePick={time => console.log(time)}
+            format={12}
+        /> 
+        <Tabs
+            theme='light'
+            layout='horizontal'
+            onSelect={tab => this.setState({ currentTab: tab})}
+            currentSelectedTab={currentTab}
+            >
+            <Tab selectionKey={1} title="Tab 1">
+                I'm the body of tab 1
+            </Tab>
+            <Tab selectionKey={2} title="Tab 2">
+                I'm the body of tab 2
+            </Tab>
+            <Tab selectionKey={3} title="Tab 3">
+                I'm the body of tab 3
+            </Tab>
+            <Tab selectionKey={4} title="Tab 4">
+                I'm the body of tab 4
+            </Tab>
+            <Tab selectionKey={5} title="Tab 5">
+                I'm the body of tab 5
+            </Tab>
+            <Tab selectionKey={6} title="Tab 6">
+                I'm the body of tab 6
+            </Tab>
+            <Tab selectionKey={7} title="Tab 7">
+                I'm the body of tab 7
+            </Tab>
+            <Tab selectionKey={8} title="Tab 8">
+                I'm the body of tab 8
+            </Tab>
+            <Tab selectionKey={9} title="Tab 9">
+                I'm the body of tab 9
+            </Tab>
+            <Tab selectionKey={10} title="Tab 10">
+                I'm the body of tab 10
+            </Tab>
+            <Tab selectionKey={11} title="Tab 11">
+                I'm the body of tab 11
+            </Tab>
+            <Tab selectionKey={12} title="Tab 12">
+                I'm the body of tab 12
+            </Tab>
+        </Tabs>
+        
+      </div>
       
     );
   }
