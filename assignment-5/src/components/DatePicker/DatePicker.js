@@ -4,8 +4,9 @@ import Calendar from '../Calendar/Calendar';
 
 class DatePicker extends React.Component {
     render() {
+        const { locale, onDatePick } = this.props;
         return (
-            <Calendar />
+            <Calendar locale={locale} onDatePick={onDatePick.bind(this)}/>
         );
     }
 }

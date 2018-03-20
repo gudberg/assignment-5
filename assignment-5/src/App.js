@@ -17,7 +17,8 @@ class App extends Component {
     super(props);
     this.state = {
       isModalOpen: false,
-      currentTab: 1
+      currentTab: 1,
+      date: ''
     };
   }
     
@@ -48,7 +49,7 @@ class App extends Component {
             'http://www.visir.is/i/92928A068E9F92A390DF808A575136185E131045ECBEDAEC582EFC04D8D6899D_713x0.jpg',
             'https://scontent-lht6-1.xx.fbcdn.net/v/t31.0-8/17855110_10212686792633955_9078787707100677461_o.jpg?oh=d1fb663a2479044bf07bdb7b2acfc614&oe=5B433475',
             'https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-9/20294477_10213868745609799_2697690918225896195_n.jpg?oh=5927473e14feb07ca8c6eae45b4d1693&oe=5B3A9E21'
-          ]}
+          ]}    
           size="medium" />
           <Row>
             <Col size={12}>col</Col>
@@ -66,14 +67,15 @@ class App extends Component {
             state={'warning'}
             striped={true}
             animated={true}
-        />
+        />*/}
         <TimePicker
             onTimePick={time => console.log(time)}
             format={12}
-        /> */}
+        /> 
 
         <DatePicker 
-            onDatePick={date => console.log(date)}
+            onDatePick={date => console.log(this.state)}
+            locale='en-EN'
         />
         
         {/* <Tabs
