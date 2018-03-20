@@ -26,7 +26,6 @@ class Calendar extends React.Component {
         } else if(thirty.includes(month)) {
             days = 30;
         } else {
-            console.log(!(year % 100) && !(year % 400));
             if(!(year % 4) && year % 100 !== 0) {
                 days = 29;
             } else if(!(year % 100) && !(year % 400)) {
@@ -70,20 +69,21 @@ class Calendar extends React.Component {
 
     setDate() {
         const { year, month, day } = this.state;
-        const { locale, onDatePick } = this.props;
+        const { locale, onDatePick, closeModal } = this.props;
         let currentDate = new Date(year, month + 1, day + 1);
         if ( isNaN( currentDate.getTime() ) ) {  
             this.setState({ error: 'Date is invalid '});
+            return;
           }
           else {
             currentDate = currentDate.toLocaleString(locale);
           }
         onDatePick(currentDate);
+        closeModal(currentDate);
     }
 
     render () {
         const {day, month, year, error} = this.state;
-        console.log(day);
         return (
             <div className={styles.body}>
                 <div className={styles.title}>
