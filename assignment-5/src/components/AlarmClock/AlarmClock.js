@@ -8,11 +8,6 @@ const DOWN_M = "DownM";
 const DOWN_H = "DownH";
 const UP_H = "UpH";
 
-const initialState = {
-    hour : 12,
-    minute: 0
-}
-
 class AlarmClock extends React.Component {
     constructor(props) {
         super(props);
@@ -92,9 +87,8 @@ class AlarmClock extends React.Component {
     }
 
     handleSet() {
-        const { format } = this.props;
+        const { format, onTimePick, closeModal } = this.props;
         const { hour } = this.state;
-        const { onTimePick } = this.props;
         let time = `${this.getHour()}:${this.getMinute()}`;
         if(format === 12) {
             if(hour >= 12 &&  hour !== 24) {
@@ -105,6 +99,7 @@ class AlarmClock extends React.Component {
             }
         }
         onTimePick(time);
+        closeModal(time);
     }
 
     render() {
