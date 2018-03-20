@@ -16,6 +16,7 @@
     width: 600px;
     height: 400px;
     background-color: white;
+    
 }
 
 .modalClose {
@@ -55,4 +56,9 @@
 }
 .hidden {
     display: none !important;
+}
+
+.button {
+    margin: auto;
+    
 }
