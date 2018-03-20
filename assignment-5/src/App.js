@@ -28,15 +28,15 @@ class App extends Component {
         <div className={styles.center}>
           <button className={styles.button} onClick={() => this.setState({ isModalOpen: true})}>Open Modal!</button>
         </div>
-        
-        {/* <button onClick={() => this.setState({ isModalOpen: true})}>Open Modal!</button>
         <Modal 
           isOpen={isModalOpen}
           onClose={() => this.setState({ isModalOpen:false })}>
           <Modal.Title>is title</Modal.Title>
           <Modal.Body>is Body</Modal.Body>
           <Modal.Footer>is Footer</Modal.Footer>
-        </Modal>
+      </Modal>
+        
+       
 
         <NameCard 
           name="Beggi"
@@ -52,17 +52,18 @@ class App extends Component {
             'https://scontent-lht6-1.xx.fbcdn.net/v/t31.0-8/17855110_10212686792633955_9078787707100677461_o.jpg?oh=d1fb663a2479044bf07bdb7b2acfc614&oe=5B433475',
             'https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-9/20294477_10213868745609799_2697690918225896195_n.jpg?oh=5927473e14feb07ca8c6eae45b4d1693&oe=5B3A9E21'
           ]}
-          size="large" /> */}
+          size="large" /> 
+
           <Row>
-            <Col size={12}>col</Col>
-            <Col size={3}>ad</Col>
-            <Col size={3}>asdfa</Col>
-            <Col size={3}>asdf</Col>
-            <Col size={4}>asdfasd</Col>
-            <Col size={2}>asdfasdf</Col>
-            <Col size={6}>asdfasdf</Col>
-            <Col size={6}>asdfas</Col>
-            <Col size={6}>asdfadsf</Col>
+            <Col size={12}>just</Col>
+            <Col size={3}>a</Col>
+            <Col size={3}>normal</Col>
+            <Col size={3}>text</Col>
+            <Col size={4}>showing</Col>
+            <Col size={2}>how</Col>
+            <Col size={6}>cool</Col>
+            <Col size={6}>this</Col>
+            <Col size={6}>is</Col>
         </Row>
         <ProgressBar 
             progress={75}
@@ -71,10 +72,7 @@ class App extends Component {
             animated={true}
             />
         <CartoonNetworkSpinner interval={3} />
-       </div>
 
-
-        />
         <TimePicker
             onTimePick={time => console.log(time)}
             format={12}
